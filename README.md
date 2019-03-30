@@ -29,11 +29,9 @@ sd_ble_cfg_set(..., &cfg, ...);
 
 ```c
 /* Start receiving channel survey continuously. */
-uint32_t errcode;
-errcode = sd_ble_gap_qos_channel_survey_start
-(BLE_GAP_QOS_CHANNEL_SURVEY_INTERVAL_CONTINUOUS);
-int8_t rssi;
+uint32_t err_code = sd_ble_gap_qos_channel_survey_start(BLE_GAP_QOS_CHANNEL_SURVEY_INTERVAL_CONTINUOUS);
 ```
+
 ```c
 /* A new measurement is ready. */
 case BLE_GAP_EVT_QOS_CHANNEL_SURVEY_REPORT:
@@ -48,7 +46,7 @@ case BLE_GAP_EVT_QOS_CHANNEL_SURVEY_REPORT:
 
 ```c
 /* Stop receiving channel survey. */
-errcode = sd_ble_gap_qos_channel_survey_stop()
+err_code = sd_ble_gap_qos_channel_survey_stop()
 ```
 
 # Requirements
