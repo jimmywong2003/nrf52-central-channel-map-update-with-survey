@@ -53,7 +53,7 @@ errcode = sd_ble_gap_qos_channel_survey_stop()
 
 # Requirements
 ------------
-- nRF5 SDK version 15.2.0
+- nRF5 SDK version 15.3.0
 - Softdevice S140v6.1.0
 - nRF52840 DK 
 - Segger Embedded Studio IDE (SES) Project
@@ -114,6 +114,6 @@ static void button_event_handler(uint8_t pin_no, uint8_t button_action)
 
 The project may need modifications to work with later versions or other boards. 
 
-To compile it, clone the repository in the /nRF5_SDK_15.2.0/examples/ directory.
+To compile it, clone the repository in the /nRF5_SDK_15.3.0/examples/ directory.
 
-The application is built to be used with the official nRF5 SDK that can be downloaded from developer.nordicsemi.com
+For detail description, you can refer to the link [https://jimmywongbluetooth.wordpress.com/2019/02/23/channel-survey-qos-and-channel-map-update-at-the-ble-central-role/](https://jimmywongbluetooth.wordpress.com/2019/02/23/channel-survey-qos-and-channel-map-update-at-the-ble-central-role/).
