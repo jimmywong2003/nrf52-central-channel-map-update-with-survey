@@ -38,8 +38,7 @@ case BLE_GAP_EVT_QOS_CHANNEL_SURVEY_REPORT:
 {
     for (i = 0; i < BLE_GAP_CHANNEL_COUNT; i++)
     {
-        rssi = p_ble_evt->evt.gap_evt.params.qos_channel_survey_report.
-        channel_energy[i];
+        rssi = p_ble_evt->evt.gap_evt.params.qos_channel_survey_report.channel_energy[i];
     }
 }
 ```
