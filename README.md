@@ -22,9 +22,19 @@ qos_channel_survey_role_available``` must be set. This is done using the ```sd_b
 
 ```c
 /* Make Channel Survey feature available to the application */
-ble_cfg_t cfg;
-cfg.role_count.qos_channel_survey_role_available = 1;
-sd_ble_cfg_set(..., &cfg, ...);
+        ble_cfg_t ble_cfg;
+        // Configure the GATTS attribute table.
+        memset(&ble_cfg, 0x00, sizeof(ble_cfg));
+        ble_cfg.gap_cfg.role_count_cfg.periph_role_count  = NRF_SDH_BLE_PERIPHERAL_LINK_COUNT;
+        ble_cfg.gap_cfg.role_count_cfg.central_role_count = NRF_SDH_BLE_CENTRAL_LINK_COUNT;
+        ble_cfg.gap_cfg.role_count_cfg.qos_channel_survey_role_available = true; /* Enable channel survey role */
+
+        err_code = sd_ble_cfg_set(BLE_GAP_CFG_ROLE_COUNT, &ble_cfg, &ram_start);
+        if (err_code != NRF_SUCCESS)
+        {
+                NRF_LOG_ERROR("sd_ble_cfg_set() returned %s when attempting to set BLE_GAP_CFG_ROLE_COUNT.",
+                              nrf_strerror_get(err_code));
+        }
 ```
 
 ```c
