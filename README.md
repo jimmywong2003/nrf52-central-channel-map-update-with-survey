@@ -13,12 +13,12 @@ In the release note of the S132/S140 v6.x or later, it has started to support.
 
 This feature (QoS) provides measurements of the energy levels on the Bluetooth Low Energy channels to the application. The application can use
 this information to determine the noise floor on a per channel basis and set an adapted channel map to avoid busy channels.
-When the feature is enabled, BLE_GAP_EVT_QOS_CHANNEL_SURVEY_REPORT events will periodically report the measured energy levels
-for each channel. The channel energy is reported in ble_gap_evt_qos_channel_survey_report_t::channel_energy
-[BLE_GAP_CHANNEL_COUNT], indexed by the Channel Index. The SoftDevice will attempt to measure energy levels and deliver reports
+When the feature is enabled, ```BLE_GAP_EVT_QOS_CHANNEL_SURVEY_REPORT``` events will periodically report the measured energy levels
+for each channel. The channel energy is reported in ```ble_gap_evt_qos_channel_survey_report_t::channel_energy
+[BLE_GAP_CHANNEL_COUNT]```, indexed by the Channel Index. The SoftDevice will attempt to measure energy levels and deliver reports
 with the average interval specified in interval_us.
-Note: To make the channel survey feature available to the application, ble_gap_cfg_role_count_t::
-qos_channel_survey_role_available must be set. This is done using the sd_ble_cfg_set() API.
+Note: To make the channel survey feature available to the application, ```ble_gap_cfg_role_count_t::
+qos_channel_survey_role_available``` must be set. This is done using the ```sd_ble_cfg_set()``` API.
 
 ```c
 /* Make Channel Survey feature available to the application */
